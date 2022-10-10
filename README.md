@@ -1,14 +1,25 @@
+**Disclaimer:** This repository is not the official version of GPU Passthrough Manager. The original version, written by [Uwzis](https://github.com/Uwzis), can be found [here](https://github.com/Uwzis/GPU-Passthrough-Manager).
+
 # GPU Passthrough Manager (Python)
-[GPU Passthrough Manager](https://github.com/uwzis/GPU-Passthrough-Manager) by [uwzis](https://github.com/uwzis) is a graphical interface utility to aid in passing through graphics devices to virtual machines. This version of GPU Passthrough Manager aims to match/exceed the functionality of the original, while being written in Python instead of C/C++. Whereas the original program is designed for GTK, this program is designed for Qt. At some point in the future, this program will support both GTK and Qt. This repository is the official Qt version of GPU Passthrough Manager.
+GPU Passthrough Manager is a graphical utility designed to assist in passing through host graphic/audio devices to virtual machines. This version of GPU Passthrough Manager is a Python rewrite of the original program, designed for Qt-based desktop environments (as opposed to GTK like the original).
 
 **This program is only compatible with systems that support IOMMU/virtualization.**
-## Documentation
+## Installation
 ### Requirements
 GPU Passthrough Manager (Python) requires the following:
 - `PyQt5` pip package (installed to all users).
-- Python3 (tested on Python 3.10, unsure of earliest compatible version).
+- Python (3+).
 - A system that has Intel VT-d/AMD-Vi **supported and enabled.**
 
+### Portable installation (run as script)
+GPU Passthrough Manager (Python) does not need to built in order to run. To install the program standalone and run GPU Passthrough Manager as a Python script, simply clone this repository and run ``GPUPassthroughManager.py`` as root.
+```
+git clone https://github.com/89mpxf/GPU-Passthrough-Manager-Python
+cd GPU-Passthrough-Manager-Python
+sudo python GPUPassthroughManager.py
+```
+
+## Documentation
 ### First time configuration
 Upon running GPU Passthrough Manager for the first time, you will be prompted to begin first time setup. In essence, and in the following order, first time setup:
 - Configures Grub bootloader to pass IOMMU kernel parameter.
