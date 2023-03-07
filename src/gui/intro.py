@@ -47,7 +47,7 @@ class window(QWidget):
 
         # Display window
         self.setLayout(self.layout)
-        self.setFixedSize(QSize(400, 300))
+        self.setFixedSize(QSize(400, 330))
         self.show()
 
     # Button event handler
