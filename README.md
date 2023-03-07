@@ -1,12 +1,12 @@
 **Disclaimer:** This repository is not the official version of GPU Passthrough Manager. The original version, written by [Uwzis](https://github.com/Uwzis), can be found [here](https://github.com/Uwzis/GPU-Passthrough-Manager).
 
-# GPU Passthrough Manager (Python)
+# GPU Passthrough Manager (Qt)
 GPU Passthrough Manager is a graphical utility designed to assist in passing through host graphic/audio devices to virtual machines. This version of GPU Passthrough Manager is a Python rewrite of the original program, designed for Qt-based desktop environments (as opposed to GTK like the original).
 
 **This program is only compatible with systems that support IOMMU/virtualization.**
 ## Installation
 ### Requirements
-GPU Passthrough Manager (Python) requires the following:
+GPU Passthrough Manager (Qt) requires the following:
 - `PyQt5` pip package (installed to all users).
 - Python (3+).
 - A system that has Intel VT-d/AMD-Vi **supported and enabled.**
@@ -19,8 +19,8 @@ GPU Passthrough Manager (Python) requires the following:
 ### Portable installation (run as script)
 GPU Passthrough Manager (Python) does not need to built in order to run. To install the program standalone and run GPU Passthrough Manager as a Python script, simply clone this repository and run ``GPUPassthroughManager.py`` as root.
 ```
-git clone https://github.com/89mpxf/GPU-Passthrough-Manager-Python
-cd GPU-Passthrough-Manager-Python
+git clone https://github.com/89mpxf/GPU-Passthrough-Manager-Qt
+cd GPU-Passthrough-Manager-Qt
 sudo python GPUPassthroughManager.py
 ```
 
