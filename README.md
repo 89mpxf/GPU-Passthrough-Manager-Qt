@@ -1,14 +1,30 @@
-# GPU Passthrough Manager (Python)
-[GPU Passthrough Manager](https://github.com/uwzis/GPU-Passthrough-Manager) by [uwzis](https://github.com/uwzis) is a graphical interface utility to aid in passing through graphics devices to virtual machines. This version of GPU Passthrough Manager aims to match/exceed the functionality of the original, while being written in Python instead of C. Whereas the original program is designed for GTK, this program is designed for Qt. At some point in the future, this program will support both GTK and Qt.
+**Disclaimer:** This repository is not the official version of GPU Passthrough Manager. The original version, written by [Uwzis](https://github.com/Uwzis), can be found [here](https://github.com/Uwzis/GPU-Passthrough-Manager).
+
+# GPU Passthrough Manager (Qt)
+GPU Passthrough Manager is a graphical utility designed to assist in passing through host graphic/audio devices to virtual machines. This version of GPU Passthrough Manager is a Python rewrite of the original program, designed for Qt-based desktop environments (as opposed to GTK like the original).
 
 **This program is only compatible with systems that support IOMMU/virtualization.**
-## Documentation
+## Installation
 ### Requirements
-GPU Passthrough Manager (Python) requires the following:
+GPU Passthrough Manager (Qt) requires the following:
 - `PyQt5` pip package (installed to all users).
-- Python3 (tested on Python 3.10, unsure of earliest compatible version).
+- Python (3+).
 - A system that has Intel VT-d/AMD-Vi **supported and enabled.**
 
+### Other compatibility notes
+- Only officially compatible with pacman (Arch-based) distros. Other distributions/flavors need tested.
+- **Warning!** GRUB is currently the only bootloader supported. Other bootloaders still need configuration modification implementations.
+- **Warning!** This program only currently supports ``mkinitcpio`` for system images. Other implementations will be supported in a later release.
+
+### Portable installation (run as script)
+GPU Passthrough Manager (Python) does not need to built in order to run. To install the program standalone and run GPU Passthrough Manager as a Python script, simply clone this repository and run ``GPUPassthroughManager.py`` as root.
+```
+git clone https://github.com/89mpxf/GPU-Passthrough-Manager-Qt
+cd GPU-Passthrough-Manager-Qt
+sudo python GPUPassthroughManager.py
+```
+
+## Documentation
 ### First time configuration
 Upon running GPU Passthrough Manager for the first time, you will be prompted to begin first time setup. In essence, and in the following order, first time setup:
 - Configures Grub bootloader to pass IOMMU kernel parameter.
@@ -29,7 +45,7 @@ Once you have completed first time setup, or manually configured VFIO, you are r
 2. Once all the devices you wish to pass through are selected, click the `Load VFIO` button in the bottom right.
 3. Wait for GPU Passthrough Manager to load the driver and reboot your system.
 
-GPU Passthrough Manager creates a temporary `vfio.conf` file in the root directory of the program. **The contents of this file will reset everytime GPU Passthrough Manager is run.** PCI device IDs are automatically added to or removed from this file as they are selected/unselected within the program. This ensures only valid configuration files can be applied amd allows the `Load VFIO` button to do the following (in order):
+GPU Passthrough Manager creates a temporary `vfio.conf` file in the root directory of the program. **The contents of this file will reset everytime GPU Passthrough Manager is run.** PCI device IDs are automatically added to or removed from this file as they are selected/unselected within the program. This ensures only valid configuration files can be applied and allows the `Load VFIO` button to do the following (in order):
 - Copy the temporary `vfio.conf` to `/etc/modprobe.d/`.
 - Rebuild system images.
 - Reboot the system.
