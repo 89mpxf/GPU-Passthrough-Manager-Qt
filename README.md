@@ -11,6 +11,11 @@ GPU Passthrough Manager (Python) requires the following:
 - Python (3+).
 - A system that has Intel VT-d/AMD-Vi **supported and enabled.**
 
+### Other compatibility notes
+- Only officially compatible with pacman (Arch-based) distros. Other distributions/flavors need tested.
+- **Warning!** GRUB is currently the only bootloader supported. Other bootloaders still need configuration modification implementations.
+- **Warning!** This program only currently supports ``mkinitcpio`` for system images. Other implementations will be supported in a later release.
+
 ### Portable installation (run as script)
 GPU Passthrough Manager (Python) does not need to built in order to run. To install the program standalone and run GPU Passthrough Manager as a Python script, simply clone this repository and run ``GPUPassthroughManager.py`` as root.
 ```
